@@ -8,6 +8,7 @@
 
 import XCTest
 import SwinjectStoryboard
+import SwiftyJSON
 
 @testable import Swinjectpoc
 class ViewControllerTests: XCTestCase {
@@ -26,10 +27,13 @@ class ViewControllerTests: XCTestCase {
     }
     func testAlertMessage() {
         viewController.callWeatherFetch()
-        var city = City(id:02, name:"" ,weather:"")
-        let cityArray: [City] = [city]
-        viewController.cities = cityArray
-        viewController.weatherTableView.removeFromSuperview()
+        viewController.weatherFetcher?.fetch {_ in
+        var city = City(id: 01, name: "", weather: "")
+        var cityArray: [City] = [city]
+        cityArray.removeAll()
+        self.viewController.cities = cityArray
+            
+        }
         XCTAssertFalse(viewController.presentedViewController is UIAlertController)
         //XCTAssertEqual(viewController.presentedViewController?.title, "TestTitle")
         //XCTAssertFalse(viewController.presentedViewController is UIAlertController)

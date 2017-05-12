@@ -18,8 +18,8 @@
 		E8096E591EC0848F00E90725 /* SwinjectpocTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8096E581EC0848F00E90725 /* SwinjectpocTests.swift */; };
 		E8096E641EC0848F00E90725 /* SwinjectpocUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8096E631EC0848F00E90725 /* SwinjectpocUITests.swift */; };
 		E87C9B1F1EC5AF5B0063D3AA /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C9B1E1EC5AF5B0063D3AA /* WeatherTableViewCell.swift */; };
+		E87C9B211EC5F5650063D3AA /* weatherFetcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87C9B201EC5F5650063D3AA /* weatherFetcherTest.swift */; };
 		E88D31CD1EC19E9F009AA143 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88D31CC1EC19E9F009AA143 /* City.swift */; };
-		E88D31CF1EC19F16009AA143 /* OpenWeatherMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88D31CE1EC19F16009AA143 /* OpenWeatherMap.swift */; };
 		E88D31D21EC1A080009AA143 /* WeatherFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88D31D11EC1A080009AA143 /* WeatherFetcher.swift */; };
 		E88D31D41EC1A6A6009AA143 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88D31D31EC1A6A6009AA143 /* Network.swift */; };
 		E8B4E76E1EC4317100AD222F /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B4E76D1EC4317100AD222F /* Networking.swift */; };
@@ -65,8 +65,8 @@
 		E8096E631EC0848F00E90725 /* SwinjectpocUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectpocUITests.swift; sourceTree = "<group>"; };
 		E8096E651EC0848F00E90725 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E87C9B1E1EC5AF5B0063D3AA /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		E87C9B201EC5F5650063D3AA /* weatherFetcherTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = weatherFetcherTest.swift; sourceTree = "<group>"; };
 		E88D31CC1EC19E9F009AA143 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
-		E88D31CE1EC19F16009AA143 /* OpenWeatherMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherMap.swift; sourceTree = "<group>"; };
 		E88D31D11EC1A080009AA143 /* WeatherFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherFetcher.swift; sourceTree = "<group>"; };
 		E88D31D31EC1A6A6009AA143 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		E8B4E76D1EC4317100AD222F /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
@@ -173,6 +173,7 @@
 				E8096E581EC0848F00E90725 /* SwinjectpocTests.swift */,
 				E8096E5A1EC0848F00E90725 /* Info.plist */,
 				E8F735E61EC57FC100C2F64C /* ViewControllerTests.swift */,
+				E87C9B201EC5F5650063D3AA /* weatherFetcherTest.swift */,
 			);
 			path = SwinjectpocTests;
 			sourceTree = "<group>";
@@ -198,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				E88D31CC1EC19E9F009AA143 /* City.swift */,
-				E88D31CE1EC19F16009AA143 /* OpenWeatherMap.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -502,7 +502,6 @@
 				E88D31D41EC1A6A6009AA143 /* Network.swift in Sources */,
 				E87C9B1F1EC5AF5B0063D3AA /* WeatherTableViewCell.swift in Sources */,
 				E88D31CD1EC19E9F009AA143 /* City.swift in Sources */,
-				E88D31CF1EC19F16009AA143 /* OpenWeatherMap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8F735E71EC57FC100C2F64C /* ViewControllerTests.swift in Sources */,
+				E87C9B211EC5F5650063D3AA /* weatherFetcherTest.swift in Sources */,
 				E8096E591EC0848F00E90725 /* SwinjectpocTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

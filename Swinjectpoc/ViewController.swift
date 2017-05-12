@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var weatherFetcher: WeatherFetcher?
+    var isCityCalled = false
     
     
     
@@ -32,6 +33,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         weatherFetcher?.fetch {
             if let cities = $0 {
                 self.cities = cities
+                self.isCityCalled = true
+                
             }
             else {
                 let title = "Error"
