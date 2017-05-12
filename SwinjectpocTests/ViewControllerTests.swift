@@ -26,11 +26,13 @@ class ViewControllerTests: XCTestCase {
     }
     func testAlertMessage() {
         viewController.callWeatherFetch()
-        var city = [City]()
-        viewController.cities = city
-        //XCTAssertTrue(viewController.presentedViewController is UIAlertController)
-        //XCTAssertEqual(viewController.presentedViewController?.title, "TestTitle")
+        var city = City(id:02, name:"" ,weather:"")
+        let cityArray: [City] = [city]
+        viewController.cities = cityArray
+        viewController.weatherTableView.removeFromSuperview()
         XCTAssertFalse(viewController.presentedViewController is UIAlertController)
+        //XCTAssertEqual(viewController.presentedViewController?.title, "TestTitle")
+        //XCTAssertFalse(viewController.presentedViewController is UIAlertController)
         
     
     }
@@ -51,13 +53,15 @@ class ViewControllerTests: XCTestCase {
     }
     
 
-//    func testTableViewCellForRowAtIndexPath() {
-//        viewController.weatherTableView.reloadData()
-//        let indexPath = NSIndexPath(row: 0, section: 0) as IndexPath
-//        let cell =  viewController.tableView(viewController.weatherTableView, cellForRowAt: indexPath) as! WeatherTableViewCell
-//        XCTAssertNotNil(cell)
-//        XCTAssertEqual(cell.weatherLabel.text!, "Clouds")
-//    }
-    
-    
+    func testTableViewCellForRowAtIndexPath() {
+        let city = City(id: 01, name: "Ranchi", weather: "28")
+        let cityArray: [City] = [city]
+        viewController.cities = cityArray
+        viewController.weatherTableView.reloadData()
+        let indexPath = NSIndexPath(row: 0, section: 0) as IndexPath
+        let cell =  viewController.tableView(viewController.weatherTableView, cellForRowAt: indexPath) as! WeatherTableViewCell
+        XCTAssertNotNil(cell)
+       XCTAssertEqual(cell.weatherLabel.text!, "28")
+   
+    }
 }
