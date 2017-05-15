@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var weatherFetcher: WeatherFetcher?
-    var isCityCalled = false
+  
     
     
     
@@ -33,10 +33,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         weatherFetcher?.fetch {
             if let cities = $0 {
                 self.cities = cities
-                self.isCityCalled = true
-                
-            }
-            else {
+            } else {
                 let title = "Error"
                 let message = "Cannot communicate with the weather server. Check wi-fi or cellular network settings."
                 let dismiss = "Dismiss"
@@ -46,6 +43,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 })
                 self.present(alert, animated: true, completion: nil)
             }
+            
         }
     }
     
@@ -63,8 +61,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
      let cell = weatherTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! WeatherTableViewCell
      let city = cities[indexPath.row]
      print("indexPath",[indexPath.row])
-     cell.placeLabel.text = city.name
-     cell.weatherLabel.text = city.weather
+     cell.placeLabel.text = city.name as! String
+     cell.weatherLabel.text = city.weather as! String
      print("cityWeather",city.weather)
      return cell
     }

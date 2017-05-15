@@ -9,6 +9,7 @@
 import XCTest
 import SwinjectStoryboard
 import SwiftyJSON
+import Alamofire
 
 @testable import Swinjectpoc
 class ViewControllerTests: XCTestCase {
@@ -23,20 +24,20 @@ class ViewControllerTests: XCTestCase {
         UIApplication.shared.keyWindow?.rootViewController = viewController
         
         _ = viewController.view
+       
         
     }
     func testAlertMessage() {
         viewController.callWeatherFetch()
-        viewController.weatherFetcher?.fetch {_ in
-        var city = City(id: 01, name: "", weather: "")
-        var cityArray: [City] = [city]
-        cityArray.removeAll()
-        self.viewController.cities = cityArray
+        
+        if let cities :AnyObject? = nil {
+        self.viewController.weatherFetcher?.fetch(response: cities as! ([City]?) -> ())
             
         }
+        
+        
         XCTAssertFalse(viewController.presentedViewController is UIAlertController)
-        //XCTAssertEqual(viewController.presentedViewController?.title, "TestTitle")
-        //XCTAssertFalse(viewController.presentedViewController is UIAlertController)
+       
         
     
     }
@@ -58,14 +59,15 @@ class ViewControllerTests: XCTestCase {
     
 
     func testTableViewCellForRowAtIndexPath() {
-        let city = City(id: 01, name: "Ranchi", weather: "28")
+        let city = City(id: 01, name: "Ranchi", weather: "Cold")
         let cityArray: [City] = [city]
         viewController.cities = cityArray
         viewController.weatherTableView.reloadData()
         let indexPath = NSIndexPath(row: 0, section: 0) as IndexPath
         let cell =  viewController.tableView(viewController.weatherTableView, cellForRowAt: indexPath) as! WeatherTableViewCell
         XCTAssertNotNil(cell)
-       XCTAssertEqual(cell.weatherLabel.text!, "28")
+        XCTAssertEqual(cell.weatherLabel.text!, "Cold")
+        XCTAssertEqual(cell.placeLabel.text!, "Ranchi")
    
     }
 }

@@ -28,7 +28,7 @@ struct WeatherFetcher {
         for (_, j) in json["list"] {
             if let id = j["id"].int {
                 let city = City(
-                    id: id,
+                    id: id ,
                     name: j["name"].string ?? "",
                     weather: j["weather"][0]["main"].string ?? "")
                 cities.append(city)

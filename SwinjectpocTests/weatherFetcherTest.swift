@@ -10,6 +10,7 @@ import XCTest
 @testable import Swinjectpoc
 class weatherFetcherTest: XCTestCase {
     var weatherFetcher:WeatherFetcher!
+    let networking :Networking! = nil
     
     override func setUp() {
         super.setUp()
@@ -25,7 +26,9 @@ class weatherFetcherTest: XCTestCase {
 }
     
     func testWeatherDecode() {
-        
+     var city = City(id: 0, name: "", weather: "")
+   
+     
         
      
     }
